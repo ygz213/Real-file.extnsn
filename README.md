@@ -26,4 +26,4 @@ See https://github.com/h2non/filetype.py#supported-types.
 
 - Authors of [filetype](https://github.com/h2non/filetype.py) module
 - Freepik for [magnifying glass](https://www.flaticon.com/free-icon/magnifier_71403) on the logo   (Icon made by [Freepik](https://www.freepik.com/) from www.flaticon.com)
-- [formycity](https://www.veryicon.com/icons/miscellaneous/unicons/file-blank-4.html) for blank file on the icon
+- [formycity](https://www.veryicon.com/icons/miscellaneous/unicons/file-blank-4.html) for blank file on the logo
