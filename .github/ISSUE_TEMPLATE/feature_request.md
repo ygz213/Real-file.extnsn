@@ -3,4 +3,4 @@ name: Feature request
 about: Suggest a feature for Real-file.extnsn
 ---
 
-### Describe the solution you would like
+### Describe the feature you would like
