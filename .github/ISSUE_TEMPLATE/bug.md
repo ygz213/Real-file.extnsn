@@ -8,8 +8,10 @@ about: Create a bug report for Real-file.extnsn
 
 `Python`:
 
+### Is the bug a crash?
+
 ### Describe the bug
 
 ### Steps to occur the bug
 
-### Screenshots
+### Screenshot(s)
