@@ -1,4 +1,4 @@
-![](app/icon.ico)
+![](app/icons/icon.ico)
 
 ---
 
