@@ -4,7 +4,7 @@
 
 # Real-file.extnsn
 
-A tool to detect your file's real extension.
+This is just a GUI that detects your file's real extension using the filetype module.
 
 ## Requirements
 
@@ -18,7 +18,7 @@ A tool to detect your file's real extension.
 
 ## Supported extensions
 
-See https://github.com/h2non/filetype.py#supported-types.
+See <https://github.com/h2non/filetype.py#supported-types>.
 
 ---
 
