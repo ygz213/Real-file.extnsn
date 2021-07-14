@@ -8,7 +8,7 @@ This is just a GUI that detects your file's real extension using the filetype mo
 
 ## Requirements
 
-- Python 3.6 and above
+- Python 3.4 and above
 - [filetype](https://github.com/h2non/filetype.py) module to scanning
 
 ## Installation
