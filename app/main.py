@@ -1,10 +1,11 @@
 from tkinter import *
 import scanafile as saf
+import options as opo
 
 class main_menu_class():
     def __init__(self):
         self.main_menu = Tk()
-        self.main_menu.title('Real-file.extnsn')
+        self.main_menu.title('Real-file.extnsn   (R-F.E v3)')
         try:
             self.main_menu.wm_iconbitmap('icons/icon.ico')
         except:
@@ -15,12 +16,14 @@ class main_menu_class():
             self.main_menu.attributes('-fullscreen', True)
 
 
-    def run_scanner():
-        user = saf.scanner()
-        user.scanning_widgets()
-
-
     def main_widgets(self):
+        def run_scanner():
+            scanner_user = saf.scanner_class()
+            scanner_user.scanning_widgets()
+        def run_settings():
+            settings_user = opo.options_class()
+            settings_user.options_widgets()
+
         Button(self.main_menu,
                text = 'Scan a file',   # "Scan a file" button
                font = 11,
@@ -31,7 +34,7 @@ class main_menu_class():
                activebackground = '#A01A1C',
                activeforeground = '#FFF',
                relief = 'flat',
-               command = lambda: main_menu_class.run_scanner()).grid(padx = 37, pady = 14)
+               command = lambda: run_scanner()).grid(padx = 37, pady = 14)
 
         Button(self.main_menu,
                text = 'Options',   # "Options" button
@@ -42,7 +45,8 @@ class main_menu_class():
                fg = '#FFF',
                activebackground = '#52467D',
                activeforeground = '#FFF',
-               relief = 'flat').grid(padx = 37, pady = 14)
+               relief = 'flat',
+               command = lambda: run_settings()).grid(padx = 37, pady = 14)
         
         self.main_menu.mainloop()
 

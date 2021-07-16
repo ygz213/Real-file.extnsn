@@ -1,10 +1,11 @@
 from tkinter import *
 import scanafile_turkish as saft
+import options_turkish as opot
 
 class ana_menü_sınıfı():
     def __init__(self):
         self.ana_menü = Tk()
-        self.ana_menü.title('Real-file.extnsn')
+        self.ana_menü.title('Real-file.extnsn   (R-F.E v3)')
         try:
             self.ana_menü.wm_iconbitmap('icons/icon.ico')
         except:
@@ -15,12 +16,14 @@ class ana_menü_sınıfı():
             self.ana_menü.attributes('-fullscreen', True)
 
 
-    def tarayıcıyı_başlat():
-        kullanıcı = saft.tarayıcı()
-        kullanıcı.tarama_widgetları()
-
-
     def ana_widgetlar(self):
+        def tarayıcıyı_başlat():
+            tarayıcı_kullanıcısı = saft.tarayıcı_sınıfı()
+            tarayıcı_kullanıcısı.tarama_widgetları()
+        def ayarları_başlat():
+            ayarlar_kullanıcısı = opot.ayarlar_sınıfı()
+            ayarlar_kullanıcısı.ayarların_widgetları()
+
         Button(self.ana_menü,
                text = 'Dosya tarat',   # "Dosya tarat" düğmesi
                font = 11,
@@ -31,7 +34,7 @@ class ana_menü_sınıfı():
                activebackground = '#A01A1C',
                activeforeground = '#FFF',
                relief = 'flat',
-               command = lambda: ana_menü_sınıfı.tarayıcıyı_başlat()).grid(padx = 37, pady = 14)
+               command = lambda: tarayıcıyı_başlat()).grid(padx = 37, pady = 14)
 
         Button(self.ana_menü,
                text = 'Ayarlar',   # "Ayarlar" düğmesi
@@ -42,9 +45,11 @@ class ana_menü_sınıfı():
                fg = '#FFF',
                activebackground = '#52467D',
                activeforeground = '#FFF',
-               relief = 'flat').grid(padx = 37, pady = 14)
-        
+               relief = 'flat',
+               command = lambda: ayarları_başlat()).grid(padx = 37, pady = 14)
+
         self.ana_menü.mainloop()
+
 
 
 if __name__ == '__main__':
