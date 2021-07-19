@@ -16,11 +16,34 @@ class options_class():
 
 
     def options_widgets(self):
-        Label(self.options_menu,
-              text = 'COMING SOON',
-              bg = '#52467D',
-              fg = '#FFF',
-              font = (None, 18)).pack(pady = 30)
+        theme = IntVar()
+        theme.set(0)
+
+        def save_settings():
+            options_file = open('options.txt', 'w')
+            if theme.get() == 1:
+                theme.set(0)
+                options_file.write('theme: False')
+            elif theme.get() == 0:
+                theme.set(1)
+                options_file.write('theme: True')
+            options_file.close()
+
+        theme_frame = Frame(self.options_menu, bg = '#52467D', height = 3, pady = 50)
+        theme_frame.pack(side = 'top')
+
+        Checkbutton(theme_frame,
+                    state = 'active',
+                    bg = '#52467D',
+                    activebackground = '#52467D',
+                    variable = theme,
+                    onvalue = 1,
+                    offvalue = 0,
+                    command = lambda: save_settings()).pack(side = 'left')
+        Label(theme_frame, text = 'Dark theme', bg = '#52467D', fg = 'white').pack(side = 'right')
+
+        Label(self.options_menu, text = '• Restart the app after changing the options.', bg = '#52467D', fg = 'white').pack()
+
         ####### (License informations)
         Label(self.options_menu, text = '    • Real-file.extnsn is a free software under the MIT license and uses filetype module under the ', bg = '#52467D', fg = 'white').pack(side = 'left')
         MIT_link = Label(self.options_menu, text = 'MIT License', fg = 'blue', cursor = 'hand2')

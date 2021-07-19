@@ -14,6 +14,12 @@ class main_menu_class():
             self.main_menu.state('zoomed')
         except:
             self.main_menu.attributes('-fullscreen', True)
+        try:
+            options_file = open('options.txt')
+            if options_file.readlines(0)[0] == 'theme: True':
+                self.main_menu['bg'] = '#1B1E23'
+        except FileNotFoundError:
+            pass
 
 
     def main_widgets(self):

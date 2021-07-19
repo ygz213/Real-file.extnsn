@@ -15,7 +15,7 @@ class ana_menü_sınıfı():
         except:
             self.ana_menü.attributes('-fullscreen', True)
         try:
-            ayarlar_dosyası = open('settings.txt')
+            ayarlar_dosyası = open('options.txt')
             if ayarlar_dosyası.readlines(0)[0] == 'theme: True':
                 self.ana_menü['bg'] = '#1B1E23'
         except FileNotFoundError:
