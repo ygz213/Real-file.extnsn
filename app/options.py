@@ -19,7 +19,7 @@ class options_class():
         theme = IntVar()
         theme.set(0)
 
-        def save_settings():
+        def save_options():
             options_file = open('options.txt', 'w')
             if theme.get() == 1:
                 theme.set(0)
@@ -39,7 +39,7 @@ class options_class():
                     variable = theme,
                     onvalue = 1,
                     offvalue = 0,
-                    command = lambda: save_settings()).pack(side = 'left')
+                    command = lambda: save_options()).pack(side = 'left')
         Label(theme_frame, text = 'Dark theme', bg = '#52467D', fg = 'white').pack(side = 'right')
 
         Label(self.options_menu, text = '• Restart the app after changing the options.', bg = '#52467D', fg = 'white').pack()

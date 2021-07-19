@@ -20,7 +20,7 @@ class ayarlar_sınıfı():
         tema.set(0)
 
         def ayarları_kaydet():
-            ayarlar_dosyası = open('settings.txt', 'w')
+            ayarlar_dosyası = open('options.txt', 'w')
             if tema.get() == 1:
                 tema.set(0)
                 ayarlar_dosyası.write('theme: False')

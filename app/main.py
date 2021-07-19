@@ -26,9 +26,9 @@ class main_menu_class():
         def run_scanner():
             scanner_user = saf.scanner_class()
             scanner_user.scanning_widgets()
-        def run_settings():
-            settings_user = opo.options_class()
-            settings_user.options_widgets()
+        def run_options():
+            options_user = opo.options_class()
+            options_user.options_widgets()
 
         Button(self.main_menu,
                text = 'Scan a file',   # "Scan a file" button
@@ -52,7 +52,7 @@ class main_menu_class():
                activebackground = '#52467D',
                activeforeground = '#FFF',
                relief = 'flat',
-               command = lambda: run_settings()).grid(padx = 37, pady = 14)
+               command = lambda: run_options()).grid(padx = 37, pady = 14)
         
         self.main_menu.mainloop()
 

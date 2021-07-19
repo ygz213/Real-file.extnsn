@@ -1,3 +1,7 @@
+# R-F.E v3.1
+
+- Added dark theme ([#2](https://github.com/ygz213/Real-file.extnsn/issues/2))
+
 # R-F.E v3
 
 - Added "Options" interface (with `options.py`)
