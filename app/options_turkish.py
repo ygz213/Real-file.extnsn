@@ -16,11 +16,34 @@ class ayarlar_sınıfı():
 
 
     def ayarların_widgetları(self):
-        Label(self.ayarlar_menüsü,
-              text = 'YAKINDA',
-              bg = '#52467D',
-              fg = '#FFF',
-              font = (None, 18)).pack(pady = 30)
+        tema = IntVar()
+        tema.set(0)
+
+        def ayarları_kaydet():
+            ayarlar_dosyası = open('settings.txt', 'w')
+            if tema.get() == 1:
+                tema.set(0)
+                ayarlar_dosyası.write('theme: False')
+            elif tema.get() == 0:
+                tema.set(1)
+                ayarlar_dosyası.write('theme: True')
+            ayarlar_dosyası.close()
+
+        tema_kabı = Frame(self.ayarlar_menüsü, bg = '#52467D', height = 3, pady = 50)
+        tema_kabı.pack(side = 'top')
+
+        Checkbutton(tema_kabı,
+                    state = 'active',
+                    bg = '#52467D',
+                    activebackground = '#52467D',
+                    variable = tema,
+                    onvalue = 1,
+                    offvalue = 0,
+                    command = lambda: ayarları_kaydet()).pack(side = 'left')
+        Label(tema_kabı, text = 'Koyu tema', bg = '#52467D', fg = 'white').pack(side = 'right')
+
+        Label(self.ayarlar_menüsü, text = '• Ayarları değiştirdikten sonra uygulamayı yeniden başlatın.', bg = '#52467D', fg = 'white').pack()
+
         ####### (Lisans bilgilendirmeleri)
         Label(self.ayarlar_menüsü, text = '    • Real-file.extnsn, MIT Lisansı altında özgür bir yazılımdır ve yine', bg = '#52467D', fg = 'white').pack(side = 'left')
         MIT_linki = Label(self.ayarlar_menüsü, text = 'MIT Lisansı', fg = 'blue', cursor = 'hand2')

@@ -14,6 +14,12 @@ class ana_menü_sınıfı():
             self.ana_menü.state('zoomed')
         except:
             self.ana_menü.attributes('-fullscreen', True)
+        try:
+            ayarlar_dosyası = open('settings.txt')
+            if ayarlar_dosyası.readlines(0)[0] == 'theme: True':
+                self.ana_menü['bg'] = '#1B1E23'
+        except FileNotFoundError:
+            pass
 
 
     def ana_widgetlar(self):
