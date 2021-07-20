@@ -9,7 +9,7 @@ class scanner_class():
         self.scanning_menu.resizable(False, False)
         self.scanning_menu.configure(background = '#A01A1C')
         self.scanning_menu.wm_attributes('-topmost', 1)
-        self.scanning_menu.title('Real-file.extnsn   (R-F.E v3)')
+        self.scanning_menu.title('Real-file.extnsn   (R-F.E v3.2)')
         try:
             self.scanning_menu.wm_iconbitmap('icons/icon.ico')
         except:

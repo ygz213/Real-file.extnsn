@@ -8,7 +8,7 @@ class options_class():
         self.options_menu.resizable(False, False)
         self.options_menu.configure(background = '#52467D')
         self.options_menu.wm_attributes('-topmost', 1)
-        self.options_menu.title('Real-file.extnsn   (R-F.E v3)')
+        self.options_menu.title('Real-file.extnsn   (R-F.E v3.2)')
         try:
             self.options_menu.wm_iconbitmap('icons/icon.ico')
         except:

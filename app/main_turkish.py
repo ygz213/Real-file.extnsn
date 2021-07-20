@@ -5,7 +5,7 @@ import options_turkish as opot
 class ana_menü_sınıfı():
     def __init__(self):
         self.ana_menü = Tk()
-        self.ana_menü.title('Real-file.extnsn   (R-F.E v3)')
+        self.ana_menü.title('Real-file.extnsn   (R-F.E v3.2)')
         try:
             self.ana_menü.wm_iconbitmap('icons/icon.ico')
         except:

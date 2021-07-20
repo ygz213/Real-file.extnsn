@@ -9,7 +9,7 @@ class tarayıcı_sınıfı():
         self.tarama_menüsü.resizable(False, False)
         self.tarama_menüsü.configure(background = '#A01A1C')
         self.tarama_menüsü.wm_attributes('-topmost', 1)
-        self.tarama_menüsü.title('Real-file.extnsn   (R-F.E v3)')
+        self.tarama_menüsü.title('Real-file.extnsn   (R-F.E v3.2)')
         try:
             self.tarama_menüsü.wm_iconbitmap('icons/icon.ico')
         except:

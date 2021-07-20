@@ -8,7 +8,7 @@ class ayarlar_sınıfı():
         self.ayarlar_menüsü.resizable(False, False)
         self.ayarlar_menüsü.configure(background = '#52467D')
         self.ayarlar_menüsü.wm_attributes('-topmost', 1)
-        self.ayarlar_menüsü.title('Real-file.extnsn   (R-F.E v3)')
+        self.ayarlar_menüsü.title('Real-file.extnsn   (R-F.E v3.2)')
         try:
             self.ayarlar_menüsü.wm_iconbitmap('icons/icon.ico')
         except:

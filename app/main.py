@@ -5,7 +5,7 @@ import options as opo
 class main_menu_class():
     def __init__(self):
         self.main_menu = Tk()
-        self.main_menu.title('Real-file.extnsn   (R-F.E v3)')
+        self.main_menu.title('Real-file.extnsn   (R-F.E v3.2)')
         try:
             self.main_menu.wm_iconbitmap('icons/icon.ico')
         except:
