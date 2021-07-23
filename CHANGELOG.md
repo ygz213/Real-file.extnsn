@@ -1,10 +1,10 @@
 # R-F.E v3.2
 
-- Fixed version information ([#4](https://github.com/ygz213/Real-file.extnsn/issues/4))
+- Fixed [version information](https://github.com/ygz213/Real-file.extnsn/issues/4)
 
 # R-F.E v3.1
 
-- Added dark theme ([#2](https://github.com/ygz213/Real-file.extnsn/issues/2))
+- Added [dark theme](https://github.com/ygz213/Real-file.extnsn/issues/2)
 
 # R-F.E v3
 
