@@ -4,13 +4,13 @@ about: Create a bug report for Real-file.extnsn
 
 ---
 
-### Is the bug occurring with latest version?
+## Versions
+
+`Real-file.extnsn`:
 
 `Python`:
 
 ### Is the bug a crash?
-
-### Describe the bug
 
 ### Steps to occur the bug
 
