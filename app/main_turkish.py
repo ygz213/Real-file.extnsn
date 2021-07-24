@@ -27,7 +27,6 @@ class ana_menü_sınıfı():
                            bd = 3,
                            bg = '#D4C4B7',
                            highlightthickness = 3,
-                           highlightbackground = '#A01A1C',
                            highlightcolor = 'black',
                            selectforeground = 'black',
                            relief = 'flat')

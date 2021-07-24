@@ -26,7 +26,6 @@ class main_menu_class():
                           bd = 3,
                           bg = '#D4C4B7',
                           highlightthickness = 3,
-                          highlightbackground = '#A01A1C',
                           highlightcolor = 'black',
                           selectforeground = 'black',
                            relief = 'flat')
