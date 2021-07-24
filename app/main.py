@@ -1,6 +1,6 @@
 from tkinter import *
-import scanafile as saf
-import options as opo
+from tkinter import messagebox
+from filetype import guess
 
 class main_menu_class():
     def __init__(self):
@@ -23,37 +23,50 @@ class main_menu_class():
 
 
     def main_widgets(self):
-        def run_scanner():
-            scanner_user = saf.scanner_class()
-            scanner_user.scanning_widgets()
-        def run_options():
-            options_user = opo.options_class()
-            options_user.options_widgets()
+        extension_information = StringVar()
+        extension_information.set("Paste the file's path.")
+        Label(textvariable = extension_information,   # Changeable string
+              height = 3).pack()
 
-        Button(self.main_menu,
-               text = 'Scan a file',   # "Scan a file" button
-               font = 11,
-               height = 3,
-               width = 17,
-               bg = '#9B5038',
-               fg = '#FFF',
-               activebackground = '#A01A1C',
-               activeforeground = '#FFF',
-               relief = 'flat',
-               command = lambda: run_scanner()).grid(padx = 37, pady = 14)
+        file_path = Entry(justify = 'center',   # Input box for the file's path
+                          width = 50,
+                          bd = 3,
+                          bg = '#D4C4B7',
+                          highlightthickness = 3,
+                          highlightbackground = '#A01A1C',
+                          highlightcolor = 'black',
+                          selectforeground = 'black',
+                           relief = 'flat')
+        file_path.pack(pady = 13)
 
-        Button(self.main_menu,
-               text = 'Options',   # "Options" button
-               font = 11,
-               height = 3,
-               width = 17,
-               bg = '#625FA4',
-               fg = '#FFF',
-               activebackground = '#52467D',
-               activeforeground = '#FFF',
+        ####### (Scanner function)
+        def scanner():
+            try:
+                scanned_file = guess('{}'.format(file_path.get()))
+                extension_information.set('This file is a {}.'.format(scanned_file.extension.upper()))
+            except FileNotFoundError:
+                messagebox.showerror('ERROR', 'No file found.')
+            except PermissionError:
+                messagebox.showerror('ERROR', 'Permission denied to access file.')
+            except AttributeError:
+                messagebox.showerror('ERROR', "Could not find this file's extension. It may be a text file, you can look at the file after renamed as <filename>.txt")
+        #######
+
+        Button(text = 'SCAN',   # Scanning button
+               font = 18,
+               height = 2,
+               width = 10,
+               bg = '#758E87',
+               activebackground = '#576863',
                relief = 'flat',
-               command = lambda: run_options()).grid(padx = 37, pady = 14)
-        
+               command = lambda: scanner()).pack()
+        ####### (License informations)
+        Label(text = '    • Real-file.extnsn is a free software under the MIT license and uses filetype module under the ').pack(side = 'left')
+        MIT_link = Label(text = 'MIT License', fg = 'blue', cursor = 'hand2')
+        MIT_link.bind("<Button-1>", lambda e: ont('https://github.com/h2non/filetype.py/blob/master/LICENSE'))
+        MIT_link.pack(side = 'left')
+        Label(text = '.').pack(side = 'left')
+        #######
         self.main_menu.mainloop()
 
 
