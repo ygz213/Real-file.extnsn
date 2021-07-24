@@ -1,3 +1,12 @@
+# R-F.E v3.3
+
+- Added `OSError` handling when typed file path is invalid
+- Deleted `options.py` because couldn't create a checked checkbutton if `options.txt`'s line 1 is `theme = True`
+    - Lost [dark theme](https://github.com/ygz213/Real-file.extnsn/issues/2)
+    - Might come back in the future
+- Deleted `scanafile.py` because it's nonsense to a button to open another window to scanning on empty window (moved to main window)
+- Design changes
+
 # R-F.E v3.2
 
 - Fixed [version information](https://github.com/ygz213/Real-file.extnsn/issues/4)
