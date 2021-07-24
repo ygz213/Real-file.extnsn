@@ -1,6 +1,6 @@
 from tkinter import *
-import scanafile_turkish as saft
-import options_turkish as opot
+from tkinter import messagebox
+from filetype import guess
 
 class ana_menü_sınıfı():
     def __init__(self):
@@ -23,37 +23,51 @@ class ana_menü_sınıfı():
 
 
     def ana_widgetlar(self):
-        def tarayıcıyı_başlat():
-            tarayıcı_kullanıcısı = saft.tarayıcı_sınıfı()
-            tarayıcı_kullanıcısı.tarama_widgetları()
-        def ayarları_başlat():
-            ayarlar_kullanıcısı = opot.ayarlar_sınıfı()
-            ayarlar_kullanıcısı.ayarların_widgetları()
+        uzantı_bilgilendirmesi = StringVar()
+        uzantı_bilgilendirmesi.set('Taranacak dosyanın yolunu yapıştırın.')
+        Label(textvariable = uzantı_bilgilendirmesi,   # Değişken yazı dizisi
+              height = 3).pack()
 
-        Button(self.ana_menü,
-               text = 'Dosya tarat',   # "Dosya tarat" düğmesi
-               font = 11,
-               height = 3,
-               width = 17,
-               bg = '#9B5038',
-               fg = '#FFF',
-               activebackground = '#A01A1C',
-               activeforeground = '#FFF',
+        dosya_yolu = Entry(justify = 'center',   # Dosya yolu için giri kutusu
+                           width = 50,
+                           bd = 3,
+                           bg = '#D4C4B7',
+                           highlightthickness = 3,
+                           highlightbackground = '#A01A1C',
+                           highlightcolor = 'black',
+                           selectforeground = 'black',
+                           relief = 'flat')
+        dosya_yolu.pack(pady = 13)
+
+        ####### (Tarayıcı fonksiyonu)
+        def tarayıcı():
+            try:
+                taranan_dosya = guess('{}'.format(dosya_yolu.get()))
+                uzantı_bilgilendirmesi.set('Bu dosya bir {}.'.format(taranan_dosya.extension.upper()))
+            except FileNotFoundError:
+                messagebox.showerror('HATA', 'Dosya bulunamadı.')
+            except PermissionError:
+                messagebox.showerror('HATA', 'Dosyaya erişim reddedildi.')
+            except AttributeError:
+                messagebox.showerror('HATA', 'Dosyanın uzantısı bulunamadı. Muhtemelen düz bir metin dosyası (Real-file.extnsn düz metin dosyalarının uzantılarını bulamaz), uzantısını bir .TXT dosyasına çevirerek inceleyebilirsiniz.')
+        #######
+
+        Button(text = 'TARA',   # Tarama düğmesi
+               font = 18,
+               height = 2,
+               width = 10,
+               bg = '#758E87',
+               activebackground = '#576863',
                relief = 'flat',
-               command = lambda: tarayıcıyı_başlat()).grid(padx = 37, pady = 14)
+               command = lambda: tarayıcı()).pack()
 
-        Button(self.ana_menü,
-               text = 'Ayarlar',   # "Ayarlar" düğmesi
-               font = 11,
-               height = 3,
-               width = 17,
-               bg = '#625FA4',
-               fg = '#FFF',
-               activebackground = '#52467D',
-               activeforeground = '#FFF',
-               relief = 'flat',
-               command = lambda: ayarları_başlat()).grid(padx = 37, pady = 14)
-
+        ####### (Lisans bilgilendirmeleri)
+        Label(text = '    • Real-file.extnsn, MIT Lisansı altında özgür bir yazılımdır ve yine').pack(side = 'left')
+        MIT_linki = Label(text = 'MIT Lisansı', fg = 'blue', cursor = 'hand2')
+        MIT_linki.bind("<Button-1>", lambda e: ont('https://github.com/h2non/filetype.py/blob/master/LICENSE'))
+        MIT_linki.pack(side = 'left')
+        Label(text = 'altında olan filetype modülünü kullanır.').pack(side = 'left')
+        #######
         self.ana_menü.mainloop()
 
 
