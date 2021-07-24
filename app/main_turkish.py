@@ -6,6 +6,7 @@ class ana_menü_sınıfı():
     def __init__(self):
         self.ana_menü = Tk()
         self.ana_menü.title('Real-file.extnsn   (R-F.E v3.2)')
+        self.ana_menü['bg'] = '#DEDEDE'
         try:
             self.ana_menü.wm_iconbitmap('icons/icon.ico')
         except:
@@ -20,6 +21,7 @@ class ana_menü_sınıfı():
         uzantı_bilgilendirmesi = StringVar()
         uzantı_bilgilendirmesi.set('Taranacak dosyanın yolunu yapıştırın.')
         Label(textvariable = uzantı_bilgilendirmesi,   # Değişken yazı dizisi
+              bg = '#DEDEDE',
               height = 3).pack()
 
         dosya_yolu = Entry(justify = 'center',   # Dosya yolu için giri kutusu
@@ -27,6 +29,7 @@ class ana_menü_sınıfı():
                            bd = 3,
                            bg = '#D4C4B7',
                            highlightthickness = 3,
+                           highlightbackground = '#DEDEDE',
                            highlightcolor = 'black',
                            selectforeground = 'black',
                            relief = 'flat')
@@ -57,11 +60,11 @@ class ana_menü_sınıfı():
                command = lambda: tarayıcı()).pack()
 
         ####### (Lisans bilgilendirmeleri)
-        Label(text = '    • Real-file.extnsn, MIT Lisansı altında özgür bir yazılımdır ve yine').pack(side = 'left')
-        MIT_linki = Label(text = 'MIT Lisansı', fg = 'blue', cursor = 'hand2')
+        Label(text = '    • Real-file.extnsn, MIT Lisansı altında özgür bir yazılımdır ve yine', bg = '#DEDEDE').pack(side = 'left')
+        MIT_linki = Label(text = 'MIT Lisansı', bg = '#DEDEDE', fg = 'blue', cursor = 'hand2')
         MIT_linki.bind("<Button-1>", lambda e: ont('https://github.com/h2non/filetype.py/blob/master/LICENSE'))
         MIT_linki.pack(side = 'left')
-        Label(text = 'altında olan filetype modülünü kullanır.').pack(side = 'left')
+        Label(text = 'altında olan filetype modülünü kullanır.', bg = '#DEDEDE').pack(side = 'left')
         #######
         self.ana_menü.mainloop()
 

@@ -5,7 +5,8 @@ from filetype import guess
 class main_menu_class():
     def __init__(self):
         self.main_menu = Tk()
-        self.main_menu.title('Real-file.extnsn   (R-F.E v3.2)')
+        self.main_menu.title('Real-file.extnsn   (R-F.E v3.3)')
+        self.main_menu['bg'] = '#DEDEDE'
         try:
             self.main_menu.wm_iconbitmap('icons/icon.ico')
         except:
@@ -20,6 +21,7 @@ class main_menu_class():
         extension_information = StringVar()
         extension_information.set("Paste the file's path.")
         Label(textvariable = extension_information,   # Changeable string
+              bg = '#DEDEDE',
               height = 3).pack()
 
         file_path = Entry(justify = 'center',   # Input box for the file's path
@@ -27,6 +29,7 @@ class main_menu_class():
                           bd = 3,
                           bg = '#D4C4B7',
                           highlightthickness = 3,
+                          highlightbackground = '#DEDEDE',
                           highlightcolor = 'black',
                           selectforeground = 'black',
                           relief = 'flat')
@@ -54,14 +57,14 @@ class main_menu_class():
                bg = '#758E87',
                activebackground = '#576863',
                relief = 'flat',
-               command = lambda: scanner()).pack()
+               command = lambda: scanner()).pack(pady = 14)
 
         ####### (License informations)
-        Label(text = '    • Real-file.extnsn is a free software under the MIT license and uses filetype module under the ').pack(side = 'left')
-        MIT_link = Label(text = 'MIT License', fg = 'blue', cursor = 'hand2')
+        Label(text = '     • Real-file.extnsn is a free software under the MIT License and uses filetype module under the ', bg = '#DEDEDE').pack(side = 'left')
+        MIT_link = Label(text = 'MIT License', bg = '#DEDEDE', fg = 'blue', cursor = 'hand2')
         MIT_link.bind("<Button-1>", lambda e: ont('https://github.com/h2non/filetype.py/blob/master/LICENSE'))
         MIT_link.pack(side = 'left')
-        Label(text = '.').pack(side = 'left')
+        Label(text = '.', bg = '#DEDEDE').pack(side = 'left')
         #######
         self.main_menu.mainloop()
 
