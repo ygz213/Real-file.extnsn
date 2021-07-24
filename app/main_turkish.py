@@ -39,6 +39,8 @@ class ana_menü_sınıfı():
                 uzantı_bilgilendirmesi.set('Bu dosya bir {}.'.format(taranan_dosya.extension.upper()))
             except FileNotFoundError:
                 messagebox.showerror('HATA', 'Dosya bulunamadı.')
+            except OSError:
+                messagebox.showerror('HATA', 'Geçersiz dosya yolu.')
             except PermissionError:
                 messagebox.showerror('HATA', 'Dosyaya erişim reddedildi.')
             except AttributeError:

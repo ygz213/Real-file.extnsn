@@ -15,6 +15,7 @@ class main_menu_class():
         except:
             self.main_menu.attributes('-fullscreen', True)
 
+
     def main_widgets(self):
         extension_information = StringVar()
         extension_information.set("Paste the file's path.")
@@ -28,7 +29,7 @@ class main_menu_class():
                           highlightthickness = 3,
                           highlightcolor = 'black',
                           selectforeground = 'black',
-                           relief = 'flat')
+                          relief = 'flat')
         file_path.pack(pady = 13)
 
         ####### (Scanner function)
@@ -37,9 +38,11 @@ class main_menu_class():
                 scanned_file = guess('{}'.format(file_path.get()))
                 extension_information.set('This file is a {}.'.format(scanned_file.extension.upper()))
             except FileNotFoundError:
-                messagebox.showerror('ERROR', 'No file found.')
+                messagebox.showerror('ERROR', 'File not found.')
             except PermissionError:
                 messagebox.showerror('ERROR', 'Permission denied to access file.')
+            except OSError:
+                messagebox.showerror('ERROR', 'Invalid file path.')
             except AttributeError:
                 messagebox.showerror('ERROR', "Could not find this file's extension. It may be a text file, you can look at the file after renamed as <filename>.txt")
         #######
@@ -52,6 +55,7 @@ class main_menu_class():
                activebackground = '#576863',
                relief = 'flat',
                command = lambda: scanner()).pack()
+
         ####### (License informations)
         Label(text = '    • Real-file.extnsn is a free software under the MIT license and uses filetype module under the ').pack(side = 'left')
         MIT_link = Label(text = 'MIT License', fg = 'blue', cursor = 'hand2')
