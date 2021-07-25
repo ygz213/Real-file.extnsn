@@ -1,3 +1,8 @@
+# R-F.E v3.4
+
+- Fixed [wrong version information on Turkish](https://github.com/ygz213/Real-file.extnsn/issues/5)
+- Fixed [different designs on English and Turkish version](https://github.com/ygz213/Real-file.extnsn/issues/6)
+
 # R-F.E v3.3
 
 - Added `OSError` handling when typed file path is invalid
