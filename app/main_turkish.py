@@ -5,7 +5,7 @@ from filetype import guess
 class ana_menü_sınıfı():
     def __init__(self):
         self.ana_menü = Tk()
-        self.ana_menü.title('Real-file.extnsn   (R-F.E v3.2)')
+        self.ana_menü.title('Real-file.extnsn   (R-F.E v3.4)')
         self.ana_menü['bg'] = '#DEDEDE'
         try:
             self.ana_menü.wm_iconbitmap('icons/icon.ico')

@@ -5,7 +5,7 @@ from filetype import guess
 class main_menu_class():
     def __init__(self):
         self.main_menu = Tk()
-        self.main_menu.title('Real-file.extnsn   (R-F.E v3.3)')
+        self.main_menu.title('Real-file.extnsn   (R-F.E v3.4)')
         self.main_menu['bg'] = '#DEDEDE'
         try:
             self.main_menu.wm_iconbitmap('icons/icon.ico')
@@ -57,7 +57,7 @@ class main_menu_class():
                bg = '#758E87',
                activebackground = '#576863',
                relief = 'flat',
-               command = lambda: scanner()).pack(pady = 14)
+               command = lambda: scanner()).pack()
 
         ####### (License informations)
         Label(text = '     • Real-file.extnsn is a free software under the MIT License and uses filetype module under the ', bg = '#DEDEDE').pack(side = 'left')
