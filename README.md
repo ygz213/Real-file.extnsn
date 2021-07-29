@@ -14,7 +14,8 @@ This is just a GUI that detects your file's real extension using the filetype mo
 ## Installation
 
 1. Download source code from [Releases](https://github.com/ygz213/Real-file.extnsn/releases) page.
-2. Run `main.py` for English or `main_turkish.py` for Turkish.
+2. Open terminal and type `pip install filetype`
+3. Run `main.py` for English or `main_turkish.py` for Turkish.
 
 ## Supported extensions
 
