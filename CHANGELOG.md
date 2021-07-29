@@ -1,3 +1,9 @@
+# R-F.E v3.5
+
+- Added "Select file" button
+- Changes on code
+- Design changes
+
 # R-F.E v3.4
 
 - Fixed [wrong version information on Turkish](https://github.com/ygz213/Real-file.extnsn/issues/5)
