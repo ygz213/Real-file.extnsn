@@ -1,3 +1,9 @@
+# R-F.E v4
+
+- Fixed [broken MIT License link](https://github.com/ygz213/Real-file.extnsn/issues/8)
+- Added [scanning capability to input box](https://github.com/ygz213/Real-file.extnsn/issues/7) when enter is pressed
+- Moved "Could not find this file's extension" notification in the code to don't wrong inform when `AttributeError` is occurred by another reason
+
 # R-F.E v3.5
 
 - Added "Select file" button
