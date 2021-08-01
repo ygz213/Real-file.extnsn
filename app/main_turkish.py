@@ -1,12 +1,13 @@
 from tkinter import *
 from tkinter import messagebox
 from tkinter import filedialog as fd
+from webbrowser import open_new_tab as ont
 from filetype import guess
 
 class uygulama():
 	def __init__(self):
 		self.ana_menü = Tk()
-		self.ana_menü.title('Real-file.extnsn   (R-F.E v3.5)')
+		self.ana_menü.title('Real-file.extnsn   (R-F.E v4)')
 		self.ana_menü['bg'] = '#DEDEDE'
 		try:
 			self.ana_menü.wm_iconbitmap('icons/icon.ico')
@@ -40,6 +41,7 @@ class uygulama():
 						   highlightcolor = '#DEDEDE',
 						   selectforeground = 'black',
 						   relief = 'flat')
+		dosya_yolu.bind("<Return>", lambda x: tarayıcı())
 		dosya_yolu.pack(side = 'left')
 
 		####### (Dosyayı seç ve giriye yapıştır)

@@ -1,12 +1,13 @@
 from tkinter import *
 from tkinter import messagebox
 from tkinter import filedialog as fd
+from webbrowser import open_new_tab as ont
 from filetype import guess
 
 class application():
 	def __init__(self):
 		self.main_menu = Tk()
-		self.main_menu.title('Real-file.extnsn   (R-F.E v3.5)')
+		self.main_menu.title('Real-file.extnsn   (R-F.E v4)')
 		self.main_menu['bg'] = '#DEDEDE'
 		try:
 			self.main_menu.wm_iconbitmap('icons/icon.ico')
@@ -40,6 +41,7 @@ class application():
 						  highlightcolor = '#DEDEDE',
 						  selectforeground = 'black',
 						  relief = 'flat')
+		file_path.bind("<Return>", lambda x: scanner())
 		file_path.pack(side = 'left')
 
 		####### (Select the file and paste to the entry)
