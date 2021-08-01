@@ -62,6 +62,8 @@ class uygulama():
 		def tarayıcı():
 			try:
 				taranan_dosya = guess('{}'.format(dosya_yolu.get()))
+				if taranan_dosya is None:
+					messagebox.showerror('HATA', 'Dosyanın uzantısı bulunamadı. Muhtemelen düz bir metin dosyası (Real-file.extnsn düz metin dosyalarının uzantılarını bulamaz), uzantısını bir .TXT dosyasına çevirerek inceleyebilirsiniz.')
 				self.uzantı_bilgilendirmesi.set('Bu dosya bir {}.'.format(taranan_dosya.extension.upper()))
 			except FileNotFoundError:
 				messagebox.showerror('HATA', 'Dosya bulunamadı.')
@@ -69,8 +71,6 @@ class uygulama():
 				messagebox.showerror('HATA', 'Geçersiz dosya yolu.')
 			except PermissionError:
 				messagebox.showerror('HATA', 'Dosyaya erişim reddedildi.')
-			except AttributeError:
-				messagebox.showerror('HATA', 'Dosyanın uzantısı bulunamadı. Muhtemelen düz bir metin dosyası (Real-file.extnsn düz metin dosyalarının uzantılarını bulamaz), uzantısını bir .TXT dosyasına çevirerek inceleyebilirsiniz.')
 		#######
 
 		Button(text = 'TARA',   # Tarama düğmesi
