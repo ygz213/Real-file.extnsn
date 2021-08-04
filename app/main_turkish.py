@@ -18,7 +18,7 @@ class uygulama():
 		except:
 			self.ana_menü.attributes('-fullscreen', True)
 		self.uzantı_bilgilendirmesi = StringVar()
-		self.uzantı_bilgilendirmesi.set('Taranacak dosyanın yolunu yapıştırın.')
+		self.uzantı_bilgilendirmesi.set('Taranacak dosyayı seçin veya yolunu yapıştırın.')
 		self.dosya_yolu_kabı = Frame()
 
 		self.ana_widgetlar()
