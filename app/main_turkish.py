@@ -64,6 +64,7 @@ class uygulama():
 				taranan_dosya = guess('{}'.format(dosya_yolu.get()))
 				if taranan_dosya is None:
 					messagebox.showerror('HATA', 'Dosyanın uzantısı bulunamadı. Muhtemelen düz bir metin dosyası (Real-file.extnsn düz metin dosyalarının uzantılarını bulamaz), uzantısını bir .TXT dosyasına çevirerek inceleyebilirsiniz.')
+					return
 				self.uzantı_bilgilendirmesi.set('Bu dosya bir {}.'.format(taranan_dosya.extension.upper()))
 			except FileNotFoundError:
 				messagebox.showerror('HATA', 'Dosya bulunamadı.')
