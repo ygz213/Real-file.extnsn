@@ -1,3 +1,8 @@
+# R-F.E v4.1
+
+- Fixed [different strings on English and Turkish version](https://github.com/ygz213/Real-file.extnsn/issues/9)
+- A minor change on code
+
 # R-F.E v4
 
 - Fixed [broken MIT License link](https://github.com/ygz213/Real-file.extnsn/issues/8)
