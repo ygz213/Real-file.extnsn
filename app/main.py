@@ -7,7 +7,7 @@ from filetype import guess
 class application():
 	def __init__(self):
 		self.main_menu = Tk()
-		self.main_menu.title('Real-file.extnsn   (R-F.E v4.1)')
+		self.main_menu.title('Real-file.extnsn   (R-F.E v4.2)')
 		self.main_menu['bg'] = '#DEDEDE'
 		try:
 			self.main_menu.wm_iconbitmap('icons/icon.ico')
@@ -52,6 +52,7 @@ class application():
 		#######
 
 		select_file = Button(self.file_path_frame,
+							 cursor = 'hand2',
 							 text = 'Select file',
 							 bg = '#758E87',
 							 activebackground = '#576863',
@@ -75,6 +76,7 @@ class application():
 		#######
 
 		Button(text = 'SCAN',   # Scanning button
+			   cursor = 'hand2',
 			   font = 18,
 			   height = 2,
 			   width = 10,

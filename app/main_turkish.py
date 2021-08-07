@@ -7,7 +7,7 @@ from filetype import guess
 class uygulama():
 	def __init__(self):
 		self.ana_menü = Tk()
-		self.ana_menü.title('Real-file.extnsn   (R-F.E v4.1)')
+		self.ana_menü.title('Real-file.extnsn   (R-F.E v4.2)')
 		self.ana_menü['bg'] = '#DEDEDE'
 		try:
 			self.ana_menü.wm_iconbitmap('icons/icon.ico')
@@ -52,6 +52,7 @@ class uygulama():
 		#######
 
 		dosyayı_seç = Button(self.dosya_yolu_kabı,
+							 cursor = 'hand2',
 							 text = 'Dosya seç',
 							 bg = '#758E87',
 							 activebackground = '#576863',
@@ -68,13 +69,14 @@ class uygulama():
 				self.uzantı_bilgilendirmesi.set('Bu dosya bir {}.'.format(taranan_dosya.extension.upper()))
 			except FileNotFoundError:
 				messagebox.showerror('HATA', 'Dosya bulunamadı.')
-			except OSError:
-				messagebox.showerror('HATA', 'Geçersiz dosya yolu.')
 			except PermissionError:
 				messagebox.showerror('HATA', 'Dosyaya erişim reddedildi.')
+			except OSError:
+				messagebox.showerror('HATA', 'Geçersiz dosya yolu.')
 		#######
 
 		Button(text = 'TARA',   # Tarama düğmesi
+			   cursor = 'hand2',
 			   font = 18,
 			   height = 2,
 			   width = 10,
