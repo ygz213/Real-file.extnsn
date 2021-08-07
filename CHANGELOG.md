@@ -1,3 +1,8 @@
+# R-F.E v4.2
+
+- Added special cursor when cursor is on the buttons
+- A minor change on `main_turkish.py`
+
 # R-F.E v4.1
 
 - Fixed [different strings on English and Turkish version](https://github.com/ygz213/Real-file.extnsn/issues/9)
