@@ -88,7 +88,7 @@ class uygulama():
 		####### (Lisans bilgilendirmeleri)
 		Label(text = '    • Real-file.extnsn, MIT Lisansı altında özgür bir yazılımdır ve yine', bg = '#DEDEDE').pack(side = 'left')
 		MIT_linki = Label(text = 'MIT Lisansı', bg = '#DEDEDE', fg = 'blue', cursor = 'hand2')
-		MIT_linki.bind("<Button-1>", lambda e: ont('https://github.com/h2non/filetype.py/blob/master/LICENSE'))
+		MIT_linki.bind("<Button-1>", lambda x: ont('https://github.com/h2non/filetype.py/blob/master/LICENSE'))
 		MIT_linki.pack(side = 'left')
 		Label(text = 'altında olan filetype modülünü kullanır.', bg = '#DEDEDE').pack(side = 'left')
 		#######

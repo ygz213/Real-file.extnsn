@@ -17,6 +17,16 @@ This is just a GUI that detects your file's real extension using the filetype mo
 2. Open terminal and type `pip install filetype`
 3. Run `main.py` for English or `main_turkish.py` for Turkish.
 
+### Information if MIT License link is not working
+
+That bug is caused by Python. To fix, you should make a minor change on `webbrowser.py` (It is on `{PYTHON_PATH}/lib/webbrowser.py`. Steps:
+
+**1.** Find `except (FileNotFoundError, subprocess.CalledProcessError):` in the code
+**2.** Change it as `except (FileNotFoundError, subprocess.CalledProcessError, PermissionError) :`
+**3.** Problem is fixed now. This is pre-added on next versions of Python.
+
+Source: <https://bugs.python.org/issue41005>
+
 ## Supported extensions
 
 See <https://github.com/h2non/filetype.py#supported-types>.
