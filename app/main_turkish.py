@@ -7,7 +7,7 @@ from filetype import guess
 class uygulama():
 	def __init__(self):
 		self.ana_menü = Tk()
-		self.ana_menü.title('Real-file.extnsn   (R-F.E v4.2)')
+		self.ana_menü.title('Real-file.extnsn   (R-F.E v4.3)')
 		self.ana_menü['bg'] = '#DEDEDE'
 		try:
 			self.ana_menü.wm_iconbitmap('icons/icon.ico')

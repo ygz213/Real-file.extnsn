@@ -1,3 +1,8 @@
+# R-F.E v4.3 (The final release)
+
+- Added additional description to error informations
+- Minor changes
+
 # R-F.E v4.2
 
 - Added special cursor when cursor is on the buttons
