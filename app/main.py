@@ -88,7 +88,7 @@ class application():
 		####### (License informations)
 		Label(text = '     • Real-file.extnsn is a free software under the MIT License and uses filetype module under the ', bg = '#DEDEDE').pack(side = 'left')
 		MIT_link = Label(text = 'MIT License', bg = '#DEDEDE', fg = 'blue', cursor = 'hand2')
-		MIT_link.bind("<Button-1>", lambda e: ont('https://github.com/h2non/filetype.py/blob/master/LICENSE'))
+		MIT_link.bind("<Button-1>", lambda x: ont('https://github.com/h2non/filetype.py/blob/master/LICENSE'))
 		MIT_link.pack(side = 'left')
 		Label(text = '.', bg = '#DEDEDE').pack(side = 'left')
 		#######
