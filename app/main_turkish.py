@@ -67,12 +67,12 @@ class uygulama():
 					messagebox.showerror('HATA', 'Dosyanın uzantısı bulunamadı. Muhtemelen düz bir metin dosyası (Real-file.extnsn düz metin dosyalarının uzantılarını bulamaz), uzantısını bir .TXT dosyasına çevirerek inceleyebilirsiniz.')
 					return
 				self.uzantı_bilgilendirmesi.set('Bu dosya bir {}.'.format(taranan_dosya.extension.upper()))
-			except FileNotFoundError:
-				messagebox.showerror('HATA', 'Dosya bulunamadı.')
-			except PermissionError:
-				messagebox.showerror('HATA', 'Dosyaya erişim reddedildi.')
-			except OSError:
-				messagebox.showerror('HATA', 'Geçersiz dosya yolu.')
+			except FileNotFoundError as fnfe:
+				messagebox.showerror('HATA', 'Dosya bulunamadı.', detail = fnfe)
+			except PermissionError as pre:
+				messagebox.showerror('HATA', 'Dosyaya erişim reddedildi.', detail = pre)
+			except OSError as ose:
+				messagebox.showerror('HATA', 'Geçersiz dosya yolu.', detail = ose)
 		#######
 
 		Button(text = 'TARA',   # Tarama düğmesi

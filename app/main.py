@@ -67,12 +67,12 @@ class application():
 					messagebox.showerror('ERROR', "Could not find this file's extension. It may be a text file, you can look at the file after renamed as <filename>.txt")
 					return
 				self.extension_information.set('This file is a {}.'.format(scanned_file.extension.upper()))
-			except FileNotFoundError:
-				messagebox.showerror('ERROR', 'File not found.')
-			except PermissionError:
-				messagebox.showerror('ERROR', 'Permission denied to access file.')
-			except OSError:
-				messagebox.showerror('ERROR', 'Invalid file path.')
+			except FileNotFoundError as fnfe:
+				messagebox.showerror('ERROR', 'File not found.', detail = fnfe)
+			except PermissionError as pre:
+				messagebox.showerror('ERROR', 'Permission denied to access file.', detail = pre)
+			except OSError as ose:
+				messagebox.showerror('ERROR', 'Invalid file path.', detail = ose)
 		#######
 
 		Button(text = 'SCAN',   # Scanning button
