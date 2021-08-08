@@ -21,9 +21,9 @@ This is just a GUI that detects your file's real extension using the filetype mo
 
 That bug is caused by Python. To fix, you should make a minor change on `webbrowser.py` (It is on `{PYTHON_PATH}/lib/webbrowser.py`. Steps:
 
-**1.** Find `except (FileNotFoundError, subprocess.CalledProcessError):` in the code
-**2.** Change it as `except (FileNotFoundError, subprocess.CalledProcessError, PermissionError) :`
-**3.** Problem is now fixed. This is pre-added on next versions of Python.
+1. Find `except (FileNotFoundError, subprocess.CalledProcessError):` in the code
+2. Change it as `except (FileNotFoundError, subprocess.CalledProcessError, PermissionError) :`
+3. Problem is now fixed. This is pre-added on next versions of Python.
 
 Source: <https://bugs.python.org/issue41005>
 
