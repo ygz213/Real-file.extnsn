@@ -66,7 +66,7 @@ class application():
 				if scanned_file is None:
 					messagebox.showerror('ERROR', "Could not find this file's extension. It may be a text file, you can look at the file after renamed as <filename>.txt")
 					return
-				self.extension_information.set('This file is a {}.'.format(scanned_file.extension.upper()))
+				self.extension_information.set('This file is a/an {}.'.format(scanned_file.extension.upper()))
 			except FileNotFoundError as fnfe:
 				messagebox.showerror('ERROR', 'File not found.', detail = fnfe)
 			except PermissionError as pre:
