@@ -7,7 +7,7 @@ from filetype import guess
 class application():
 	def __init__(self):
 		self.main_menu = Tk()
-		self.main_menu.title('Real-file.extnsn   (R-F.E v4.3)')
+		self.main_menu.title('Real-file.extnsn   (R-F.E v4.4)')
 		self.main_menu['bg'] = '#DEDEDE'
 		try:
 			self.main_menu.wm_iconbitmap('icons/icon.ico')

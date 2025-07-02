@@ -1,4 +1,9 @@
-# R-F.E v4.3 (The final release)
+# R-F.E v4.4 (The final release)
+
+- Fixed a minor grammatical error
+- Made icon transparent
+
+# R-F.E v4.3
 
 - Added additional description to error informations
 - Minor changes
